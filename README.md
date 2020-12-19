@@ -5,3 +5,4 @@
 - dash-core-components
 - dash-html-components
 - dash-table
+- dash-renderer
