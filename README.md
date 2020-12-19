@@ -1,6 +1,6 @@
 # Semantic-Data-Web
 
-##dependencies: 
+# dependencies: 
 - dash
 - dash-core-components
 - dash-html-components
