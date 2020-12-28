@@ -41,8 +41,12 @@ body {
     height: 500px;
     width: 30%;
     text-align: center;
+    float:left;
 }
-
+.examples {
+    width:67%;
+    float:right;
+}
 .querybox--title {
 
 }
