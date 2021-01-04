@@ -71,3 +71,8 @@ body {
     text-align: center;
     width: 30%;
 }
+
+.result-graph {
+    width: 600px;
+    float: right;
+}
