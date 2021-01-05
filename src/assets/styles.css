@@ -35,6 +35,12 @@ body {
     width: 10%;
 }
 
+.tabs-content {
+    display: inline-block;
+    float: right;
+    width: 60%;
+}
+
 .querybox {
     border: 1px solid gray;
     border-radius: 5px;
@@ -61,18 +67,4 @@ body {
     height: 30px;
     margin: auto;
     width: 25%;
-}
-
-.output {
-    border: 1px solid gray;
-    border-radius: 5px;
-    display:inline-block;
-    height: 500px;
-    text-align: center;
-    width: 30%;
-}
-
-.result-graph {
-    width: 600px;
-    float: right;
 }
