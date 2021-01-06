@@ -1,0 +1,31 @@
+Members of the French National Assembly born out of France,"SELECT DISTINCT ?item ?itemLabel ?placeLabel ?countryLabel
+WHERE
+{
+  ?item wdt:P39 wd:Q3044918 .
+  ?item wdt:P19 ?place .
+  ?place wdt:P17 ?country .
+  FILTER NOT EXISTS { ?place wdt:P17 wd:Q142 . }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language ""fr"" . }
+}
+ORDER BY ?countryLabel ?itemLabel"
+Number of jurisdictions by driving side,"SELECT ?sideLabel (COUNT(?jurisdiction) AS ?count)
+WHERE
+{
+  ?jurisdiction wdt:P1622 ?side.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language ""en"". }
+}
+GROUP BY ?sideLabel
+ORDER BY ?sideLabel"
+Number of dead people by month since 2000,"SELECT  ?yearmonth (COUNT(?person) as ?count)
+WHERE
+{
+  ?person wdt:P31 wd:Q5;
+          p:P570/psv:P570 [
+                wikibase:timePrecision ?precision ;
+                wikibase:timeValue ?date ;
+              ] .
+  BIND(CONCAT(STR(YEAR(?date)),""-"",STR(MONTH(?date))) as ?yearmonth).
+  FILTER( ?date >= ""2000-01-01T00:00:00""^^xsd:dateTime )
+  FILTER( ?precision >= ""10""^^xsd:integer ) # precision of at least month
+}
+GROUP BY ?yearmonth"
