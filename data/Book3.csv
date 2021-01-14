@@ -7,7 +7,7 @@ WHERE
   FILTER NOT EXISTS { ?place wdt:P17 wd:Q142 . }
   SERVICE wikibase:label { bd:serviceParam wikibase:language ""fr"" . }
 }
-ORDER BY ?countryLabel ?itemLabel"
+ORDER BY ?countryLabel ?itemLabel",https://query.wikidata.org/sparql
 Number of jurisdictions by driving side,"SELECT ?sideLabel (COUNT(?jurisdiction) AS ?count)
 WHERE
 {
@@ -15,7 +15,7 @@ WHERE
   SERVICE wikibase:label { bd:serviceParam wikibase:language ""en"". }
 }
 GROUP BY ?sideLabel
-ORDER BY ?sideLabel"
+ORDER BY ?sideLabel",https://query.wikidata.org/sparql
 Number of dead people by month since 2000,"SELECT  ?yearmonth (COUNT(?person) as ?count)
 WHERE
 {
@@ -28,4 +28,13 @@ WHERE
   FILTER( ?date >= ""2000-01-01T00:00:00""^^xsd:dateTime )
   FILTER( ?precision >= ""10""^^xsd:integer ) # precision of at least month
 }
-GROUP BY ?yearmonth"
+GROUP BY ?yearmonth",https://query.wikidata.org/sparql
+Number of films starring leonardo Di caprio.,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT COUNT(DISTINCT ?uri) 
+WHERE {
+ ?uri rdf:type dbo:Film .
+        ?uri dbo:starring res:Leonardo_DiCaprio . 
+}",http://dbpedia.org/sparql
