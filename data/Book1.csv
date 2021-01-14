@@ -1,0 +1,22 @@
+Number of films starring leonardo Di caprio.,"PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX res: <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT COUNT(DISTINCT ?uri) 
+WHERE {
+ ?uri rdf:type dbo:Film .
+        ?uri dbo:starring res:Leonardo_DiCaprio . 
+}"
+books,"PREFIX : <http://dbpedia.org/resource/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+SELECT ?author_name ?title
+WHERE {
+     ?author rdf:type dbo:Writer. 
+     ?author rdfs:label ?author_name .
+     FILTER (LANG(?author_name)='en').
+     ?author dbo:notableWork ?work .
+     ?work rdfs:label ?title .
+     FILTER (LANG(?title)='en').
+} LIMIT 15"
