@@ -8,5 +8,6 @@ import TableCallbacks
 import ChartsResultCallback
 import MapsCallbacks
 
-
-app.server
+server = app.server
+# if name == '__main__':
+app.run_server(debug=True)
