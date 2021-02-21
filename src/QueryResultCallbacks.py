@@ -86,7 +86,7 @@ def sql(value, endpoint):
     else:
         return None
 
-        def get_data_function(value, endpoint,endpointType):
+    def get_data_function(value, endpoint,endpointType):
         if endpointType == '1':
             start = time.perf_counter()
             g = rdflib.Graph(store='Sleepycat')

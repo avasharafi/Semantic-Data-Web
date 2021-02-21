@@ -129,7 +129,7 @@ def gen_graph_function(jsonified_ResultListdataframe):
                 return True, { }, {'display': 'none'}
 
 
-                @app.callback(
+@app.callback(
     [Output("alert-chart", "is_open"),Output("graph", "figure"), Output("result-graph", "style")],
     [Input("submit-btn", "n_clicks"),
     Input("intermediate-value", "children"),
