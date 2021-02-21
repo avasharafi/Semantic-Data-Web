@@ -7,6 +7,6 @@ import QueryResultCallbacks
 import TableCallbacks
 import ChartsResultCallback
 import MapsCallbacks
-import Statistics
+
 
 app.server

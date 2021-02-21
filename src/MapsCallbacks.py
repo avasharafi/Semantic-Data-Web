@@ -3,7 +3,6 @@ import plotly.graph_objs as go
 from jupyter_dash import JupyterDash
 from dash.dependencies import Input, Output, State
 import plotly.express as px
-from jupyter_dash import JupyterDash
 from dash.dependencies import Input, Output, State
 import dash
 import pandas as pd
