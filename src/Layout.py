@@ -1,4 +1,3 @@
-import import_ipynb
 import dash
 import dash_core_components as dcc
 import dash_bootstrap_components as dbc
