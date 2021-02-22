@@ -89,18 +89,17 @@ def sql(value, endpoint):
 def get_data_function(value, endpoint,endpointType):
         if endpointType == '1':
             start = time.perf_counter()
-            g = rdflib.Graph(store='Sleepycat')
-            g.open('/home/user/data/myRDFLibStore', create = True)
+            g = rdflib.Graph()
             g.parse("../data/" + endpoint, format=rdflib.util.guess_format("../data/" + endpoint))
             end = time.perf_counter()
             Log_Parse_Data(endpoint,round(end - start,3))
             start2 = time.perf_counter()
-            q = prepareQuery(value)
-            qres = g.query(q)
+            qres = g.query(value)
             ResultListdataframe = pd.DataFrame (qres.bindings)
             end2 = time.perf_counter()
             Log_Query_Data(endpoint,value, len(ResultListdataframe.index),ResultListdataframe.shape[1],round(end2 - start2,3))            
             return False, False, ResultListdataframe.to_json(date_format='iso', orient='split')
+        
         
         elif endpointType == '2':
             ResultListdataframe = sql(value, endpoint) 

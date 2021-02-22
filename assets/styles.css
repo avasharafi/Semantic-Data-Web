@@ -117,3 +117,13 @@ body {
     margin: 5px;
     padding: 5px;
 }
+input[name="upload-data2-upload"] {
+    width: 276px !important;
+    padding: 0px !important;
+    position: inherit !important;
+}
+input[name="upload-data-upload"] {
+    width: 276px !important;
+    padding: 0px !important;
+    position: inherit !important;
+}

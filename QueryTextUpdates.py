@@ -17,7 +17,8 @@ def update_endpoint(title1,title2, fileNames):
         endpoint = 'No changes yet'
     else:
         endpoint = ctx.triggered[0]['prop_id'].split('.')[0]
-    if((endpoint == 'endpoint-query1-intermediate-value1' or endpoint == 'upload-data') and ctx.triggered[0]['value'] != ''):
+    if((endpoint == 'endpoint-query1-intermediate-value1' or endpoint == 'upload-data') and (ctx.triggered[0]['value'] != '' and ctx.triggered[0]['value'] != None)):
+
         return title1,'1'
     else:
         return title2,'2' 
@@ -32,11 +33,10 @@ def update_endpoint2(title1,title2, fileNames):
         endpoint = 'No changes yet'
     else:
         endpoint = ctx.triggered[0]['prop_id'].split('.')[0]
-    if((endpoint == 'endpoint-query2-intermediate-value1' or endpoint == 'upload-data2') and ctx.triggered[0]['value'] != ''):
+    if((endpoint == 'endpoint-query2-intermediate-value1' or endpoint == 'upload-data2') and (ctx.triggered[0]['value'] != '' and ctx.triggered[0]['value'] != None)):
         return title1,'1'
     else:
         return title2,'2'  
-    
     
 #---------------------------------------------------Query Samples Callback--------------------------------------------------------------
 # write selected query sample in the query text area    
