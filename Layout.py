@@ -52,20 +52,23 @@ app.layout = html.Div([
                         placeholder="Enter your SPARQL query endpoint.",
                         className="querybox--endpoint"
                     ),
-                    du.Upload(
+                    dcc.Upload(
                         id='upload-data',
-                        text='Drag and Drop Here to upload!',
-                        filetypes=['nt', 'ttl','rdf','n3','xml','tql'],
-                        default_style={
-                            'width': '95%',
+                        children=html.Div([
+                            'Drag and Drop or ',
+                            html.A('Select Files')
+                        ]),
+                        style={
+                            'width': '70%',
                             'height': '13px',
                             'lineHeight': '13px',
                             'borderWidth': '1px',
                             'borderStyle': 'dashed',
                             'margin': 'auto',
-                            'fontSize': 'small',
-                            'color': 'gray'
+                            'font-size': 'small'
                         },
+                        multiple=True,
+                        max_size=350
                     ),
                     dcc.Textarea(
                         id= "query-text", 
@@ -99,20 +102,23 @@ app.layout = html.Div([
                         placeholder="Enter your SPARQL query endpoint.",
                         className="querybox--endpoint"
                     ),
-                    du.Upload(
+                    dcc.Upload(
                         id='upload-data2',
-                        text='Drag and Drop Here to upload!',
-                        filetypes=['nt', 'ttl','rdf','n3','xml','tql'],
-                        default_style={
-                            'width': '95%',
+                        children=html.Div([
+                            'Drag and Drop or ',
+                            html.A('Select Files')
+                        ]),
+                        style={
+                            'width': '95',
                             'height': '13px',
                             'lineHeight': '13px',
                             'borderWidth': '1px',
                             'borderStyle': 'dashed',
                             'margin': 'auto',
-                            'fontSize': 'small',
-                            'color': 'gray'
+                            'font-size': 'small'
                         },
+                        multiple=True,
+                        max_size=350
                     ),
                     dcc.Textarea(
                         id= "query-text2", 

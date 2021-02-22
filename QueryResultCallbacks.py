@@ -90,7 +90,7 @@ def get_data_function(value, endpoint,endpointType):
         if endpointType == '1':
             start = time.perf_counter()
             g = rdflib.Graph()
-            g.parse("../data/" + endpoint, format=rdflib.util.guess_format("../data/" + endpoint))
+            g.parse("data/" + endpoint, format=rdflib.util.guess_format("data/" + endpoint))
             end = time.perf_counter()
             Log_Parse_Data(endpoint,round(end - start,3))
             start2 = time.perf_counter()
