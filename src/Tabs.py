@@ -429,13 +429,13 @@ def render_content(tab):
                     html.Div("Click on the upload area or simply drag the RDF file and drop it in the upload area and then press the SUBMIT button."),
                     
                     html.H4("- How to see the query result as a table:"),
-                    html.Div("after submitting the query, go to the tables tab. You ca see the result there. you can also use the dropdowns to change the properties."),
+                    html.Div("After submitting the query, go to the tables tab. You can see the result there. you can also use the dropdowns to change the properties."),
 
                     html.H4("- How to see the query result as a chart:"),
-                    html.Div("after submitting the query, go to the charts tab. You ca see the result there. you can also use the dropdowns to change the properties."),
+                    html.Div("After submitting the query, go to the charts tab. You can see the result there. you can also use the dropdowns to change the properties."),
                     
                     html.H4("- How to see the query result as a map:"),
-                    html.Div("after submitting the query, go to the maps tab. You ca see the result there. you can also use the dropdowns to change the properties."),
+                    html.Div("After submitting the query, go to the maps tab. You can see the result there. you can also use the dropdowns to change the properties."),
 
                     html.H4("- How to compare two queries:"),
                     html.Div("First, submit the first query either by querying an endpoint or uploading the RDF file. Then, open the compare text area by clicking on toggle compare box button. Then add the second query in one of the two possible ways described and press COMPARE button."),
