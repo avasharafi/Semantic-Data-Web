@@ -29,7 +29,7 @@ app.layout = html.Div([
                 className="navbar--title"),
             html.Div(
                 children=[
-                dcc.Tabs(id='tabs', value='Tables', children=[
+                dcc.Tabs(id='tabs', value='Tutorial', children=[
 #                     dcc.Tab(label='Dashboard', value='Dashboard',style=tab_style, selected_style=tab_selected_style),
                     dcc.Tab(label='Tables', value='Tables',style=tab_style, selected_style=tab_selected_style),
                     dcc.Tab(label='Charts', value='Charts',style=tab_style, selected_style=tab_selected_style),

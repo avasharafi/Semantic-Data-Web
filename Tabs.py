@@ -413,7 +413,7 @@ def render_content(tab):
                         column_selectable='single'
                     )
                 ]),
-                dbc.Table(table_header + table_body, bordered=True,style={'fontSize':'small'}),
+                # dbc.Table(table_header + table_body, bordered=True,style={'fontSize':'small'}),
         ])
     elif tab == 'Tutorial':
         return html.Div([
