@@ -19,33 +19,35 @@ start_table_df = pd.DataFrame(columns=[''])
 #---------------------------------------------------Upload File Callback for query1--------------------------------------------------------------
 UPLOAD_DIRECTORY = "data/"
 @app.callback(Output('endpoint-query1-intermediate-value1', 'title'),
-              [Input('upload-data', 'contents'),
-              Input('upload-data', 'filename'),
-              Input('upload-data', 'last_modified'),
+              [
+              Input('upload-data', 'fileNames'),
+              Input('upload-data', 'isCompleted'),
              
               ])
-def update_output(list_of_contents, list_of_names, list_of_dates):
-   
-        if list_of_contents is not None:
-            data = list_of_contents[0].encode("utf8").split(b";base64,")[1]
-            with open(os.path.join(UPLOAD_DIRECTORY, list_of_names[0]), "wb") as fp:
-                fp.write(base64.decodebytes(data))
-                return list_of_names[0]
+def update_output(filenames, iscompleted):   
+        if not iscompleted:
+            start = time.perf_counter()
+            return
+        if filenames is not None:
+            end = time.perf_counter()
+#             Log_File_Data(filenames[0],os.path.getsize(UPLOAD_DIRECTORY+filenames[0]), round(end - start,3))
+            return filenames[0]
         return ''
 #---------------------------------------------------Upload File Compare Callback for query2--------------------------------------------------------------
 @app.callback(Output('endpoint-query2-intermediate-value1', 'title'),
-              [Input('upload-data2', 'contents'),
-              Input('upload-data2', 'filename'),
-              Input('upload-data2', 'last_modified'),
+              [
+              Input('upload-data2', 'fileNames'),
+              Input('upload-data2', 'isCompleted'),
              
               ])
-def update_output(list_of_contents, list_of_names, list_of_dates):
-   
-        if list_of_contents is not None:
-            data = list_of_contents[0].encode("utf8").split(b";base64,")[1]
-            with open(os.path.join(UPLOAD_DIRECTORY, list_of_names[0]), "wb") as fp:
-                fp.write(base64.decodebytes(data))
-                return list_of_names[0]
+def update_output(filenames, iscompleted):   
+        if not iscompleted:
+            start = time.perf_counter()
+            return
+        if filenames is not None:
+            end = time.perf_counter()
+#             Log_File_Data(filenames[0],os.path.getsize(UPLOAD_DIRECTORY+filenames[0]), round(end - start,3))
+            return filenames[0]
         return ''
     
     

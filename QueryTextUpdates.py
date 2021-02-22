@@ -9,7 +9,7 @@ from HelperFunctions import queries,endpoints
 
 
 @app.callback([Output("query-endpoint", "value"),Output("endpoint-query1-type", "title")],
-              [Input('endpoint-query1-intermediate-value1', 'title'),Input('endpoint-query1-intermediate-value2', 'title'), Input('upload-data', 'last_modified')],             
+              [Input('endpoint-query1-intermediate-value1', 'title'),Input('endpoint-query1-intermediate-value2', 'title'), Input('upload-data', 'fileNames')],             
               )
 def update_endpoint(title1,title2, fileNames):
     ctx = dash.callback_context
@@ -25,7 +25,7 @@ def update_endpoint(title1,title2, fileNames):
     
 #---------------------------------------------------Update endpoint query 2 value Callback for compare--------------------------------------------------------------
 @app.callback([Output("query-endpoint2", "value"),Output("endpoint-query2-type", "title")],
-              [Input('endpoint-query2-intermediate-value1', 'title'),Input('endpoint-query2-intermediate-value2', 'title'), Input('upload-data2', 'last_modified')],             
+              [Input('endpoint-query2-intermediate-value1', 'title'),Input('endpoint-query2-intermediate-value2', 'title'), Input('upload-data2', 'fileNames')],             
               )
 def update_endpoint2(title1,title2, fileNames):
     ctx = dash.callback_context

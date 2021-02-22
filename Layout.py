@@ -52,22 +52,20 @@ app.layout = html.Div([
                         placeholder="Enter your SPARQL query endpoint.",
                         className="querybox--endpoint"
                     ),
-                    dcc.Upload(
+                    du.Upload(
                         id='upload-data',
-                        children=html.Div([
-                            'Drag and Drop or ',
-                            html.A('Select Files')
-                        ]),
-                        style={
-                            'width': '70%',
+                        text='Drag and Drop Here to upload!',
+                        filetypes=['nt', 'ttl','rdf','n3','xml','tql'],
+                        default_style={
+                            'width': '95%',
                             'height': '13px',
                             'lineHeight': '13px',
                             'borderWidth': '1px',
                             'borderStyle': 'dashed',
                             'margin': 'auto',
-                            'font-size': 'small'
+                            'fontSize': 'small',
+                            'color': 'gray'
                         },
-                        multiple=True,
                     ),
                     dcc.Textarea(
                         id= "query-text", 
