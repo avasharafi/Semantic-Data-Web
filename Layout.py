@@ -7,7 +7,7 @@ from dash.dependencies import Input, Output, State
 from MainApp import app
 
 
-du.configure_upload(app, '../data/',use_upload_id=False)
+du.configure_upload(app, 'data/',use_upload_id=False)
 
 tab_style = {
     'backgroundColor': '#d3e0ea',
@@ -68,7 +68,6 @@ app.layout = html.Div([
                             'font-size': 'small'
                         },
                         multiple=True,
-                        max_size=350
                     ),
                     dcc.Textarea(
                         id= "query-text", 
@@ -102,23 +101,20 @@ app.layout = html.Div([
                         placeholder="Enter your SPARQL query endpoint.",
                         className="querybox--endpoint"
                     ),
-                    dcc.Upload(
+                    du.Upload(
                         id='upload-data2',
-                        children=html.Div([
-                            'Drag and Drop or ',
-                            html.A('Select Files')
-                        ]),
-                        style={
-                            'width': '95',
+                        text='Drag and Drop Here to upload!',
+                        filetypes=['nt', 'ttl','rdf','n3','xml','tql'],
+                        default_style={
+                            'width': '95%',
                             'height': '13px',
                             'lineHeight': '13px',
                             'borderWidth': '1px',
                             'borderStyle': 'dashed',
                             'margin': 'auto',
-                            'font-size': 'small'
+                            'fontSize': 'small',
+                            'color': 'gray'
                         },
-                        multiple=True,
-                        max_size=350
                     ),
                     dcc.Textarea(
                         id= "query-text2", 
