@@ -14,24 +14,24 @@ from HelperFunctions import start_table_df
 
 
 #-----------------------------------------selected tab callback ----------------------------------------------------------------
-table_header = [
-    html.Thead(html.Tr([html.Th("File"), html.Th("Query")]))
-]
-query1=html.Div("select * where {<http://de.dbpedia.org/resource/Karlsruhe> ?p ?o .}")
-query2=html.Div([
-    html.Div("select (COUNT(?person)  as ?cnt)  ?name where {"),
-    html.Div("  ?person <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"),
-    html.Div("http://swrc.ontoware.org/ontology#Person> . "),
-    html.Div("  ?person <http://swrc.ontoware.org/ontology#affiliation> ?aff ."),
-    html.Div("  #  ?aff a <http://swrc.ontoware.org/ontology#affiliation>."),
-    html.Div("  ?aff <http://swrc.ontoware.org/ontology#name> ?name ."),
-    html.Div("} group by ?name")
-])
-
-row1 = html.Tr([html.Td(html.A("Karl.n3",href="../data/Karl.n3",download="Karl.n3")), html.Td(query1)])
-row2 = html.Tr([html.Td(html.A("aifb_fixed_complete.nt",href="../data/aifb_fixed_complete.nt",download="aifb_fixed_complete.nt")), html.Td(query2)])
-
-table_body = [html.Tbody([row1, row2])]
+# table_header = [
+#     html.Thead(html.Tr([html.Th("File"), html.Th("Query")]))
+# ]
+# query1=html.Div("select * where {<http://de.dbpedia.org/resource/Karlsruhe> ?p ?o .}")
+# query2=html.Div([
+#     html.Div("select (COUNT(?person)  as ?cnt)  ?name where {"),
+#     html.Div("  ?person <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"),
+#     html.Div("http://swrc.ontoware.org/ontology#Person> . "),
+#     html.Div("  ?person <http://swrc.ontoware.org/ontology#affiliation> ?aff ."),
+#     html.Div("  #  ?aff a <http://swrc.ontoware.org/ontology#affiliation>."),
+#     html.Div("  ?aff <http://swrc.ontoware.org/ontology#name> ?name ."),
+#     html.Div("} group by ?name")
+# ])
+#
+# row1 = html.Tr([html.Td(html.A("Karl.n3",href="../data/Karl.n3",download="Karl.n3")), html.Td(query1)])
+# row2 = html.Tr([html.Td(html.A("aifb_fixed_complete.nt",href="../data/aifb_fixed_complete.nt",download="aifb_fixed_complete.nt")), html.Td(query2)])
+#
+# table_body = [html.Tbody([row1, row2])]
 
 #render page for selected tab
 @app.callback(
@@ -413,7 +413,9 @@ def render_content(tab):
                         column_selectable='single'
                     )
                 ]),
-                dbc.Table(table_header + table_body, bordered=True,style={'fontSize':'small'}),
+                # dbc.Table(table_header + table_body, bordered=True,style={'fontSize':'small'}),
+            html.A("Karl.n3", href="../data/Karl.n3", download="Karl.n3"),
+            html.A("aifb_fixed_complete.nt", href="../data/aifb_fixed_complete.nt", download="aifb_fixed_complete.nt"),
         ])
     elif tab == 'Tutorial':
         return html.Div([

@@ -10,4 +10,4 @@ import MapsCallbacks
 
 server = app.server
 # if name == '__main__':
-app.run_server(debug=True)
+# app.run_server(debug=True)
