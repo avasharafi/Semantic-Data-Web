@@ -7,6 +7,7 @@ Contains .ipynb version of dashboard which you can save the whole folder locally
 
 To run the dashboard locally,  
 - first install dependencies:
+  - open terminal
   - cd to the directory where requirements.txt is located
   - pip install -r requirements.txt
 
