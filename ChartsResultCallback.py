@@ -89,7 +89,7 @@ def gen_graph_function(jsonified_ResultListdataframe):
                             showactive=True,
                             x=-0.9,
                             xanchor="left",
-                            y=1.20,
+                            y=2,
                             yanchor="top"
                         ),
                         dict(buttons=buttonlist,
