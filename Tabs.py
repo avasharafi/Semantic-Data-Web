@@ -259,9 +259,9 @@ def render_content(tab):
                         dcc.Graph(
                             id='map',
                             figure={
-                                "layout": {
-                                   "height": 340,
-                                },
+                               # "layout": {
+                               #    "height": 340,
+                               # },
                             },
                         ),                
                      ],
@@ -327,9 +327,9 @@ def render_content(tab):
                         dcc.Graph(
                             id='map2',
                             figure={
-                                "layout": {
-                                   "height": 340,
-                                },
+                              #  "layout": {
+                              #     "height": 340,
+                              #  },
                             },
                         ),
 

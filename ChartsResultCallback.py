@@ -44,6 +44,9 @@ def gen_graph_function(jsonified_ResultListdataframe):
                                           name='line',
                                           visible=False))
 
+                
+
+
 
                 buttonlist = []
                 for col in ResultListdataframe.columns:

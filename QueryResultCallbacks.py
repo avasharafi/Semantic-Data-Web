@@ -61,11 +61,15 @@ def sql(value, endpoint):
             out = []
             for row in processed_results['results']['bindings']:
                 item = []
-                for c in cols:
+                for c in cols: 
                     item.append(row.get(c, {}).get('value'))
                 out.append(item)
 
             ResultListdataframe = pd.DataFrame(out, columns=cols)
+
+            
+
+    
 
 
             if set(['lon','lat']).issubset(ResultListdataframe.columns): 
