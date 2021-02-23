@@ -171,7 +171,7 @@ def render_content(tab):
                             id='graph',
                             figure={
                                 "layout": {
-                                    "height": 500,
+                                    "height": 700,
                                     'overflow': 'scroll'
                                 },
                             },
