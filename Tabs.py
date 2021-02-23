@@ -13,7 +13,7 @@ from HelperFunctions import start_table_df
 
 
 
-#-----------------------------------------selected tab callback ----------------------------------------------------------------
+# selected tab callback 
 table_header = [
     html.Thead(html.Tr([html.Th("File"), html.Th("Query")]))
 ]
@@ -170,9 +170,9 @@ def render_content(tab):
                         dcc.Graph(
                             id='graph',
                             figure={
-                                "layout": {
-                                    "height": 253,
-                                    'overflow': 'scroll'
+                               # "layout": {
+                               #     "height": 253,
+                               #     'overflow': 'scroll'
                                 },
                             },
                         ),
@@ -215,9 +215,9 @@ def render_content(tab):
                             dcc.Graph(
                                 id='graph2',
                                 figure={
-                                "layout": {
-                                    "height": 270, 
-                                },
+                                #"layout": {
+                                #    "height": 270, 
+                                #},
                             },
                             ),
 
