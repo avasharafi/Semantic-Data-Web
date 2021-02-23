@@ -442,6 +442,10 @@ def render_content(tab):
                     html.Div("After submitting the query, go to the charts tab to see the query result as a chart. Use the dropdowns to change the properties. You can also use the tools to zoom or export the chart as an image."),
                     html.Img(src=app.get_asset_url('5.png'), style={'width': '250px', 'vertical-align': 'top'}),
                     html.Img(src=app.get_asset_url('10.png'), style={'width': '250px', 'vertical-align': 'top'}),
+                    html.Img(src=app.get_asset_url('15.png'), style={'width': '250px', 'vertical-align': 'top'}),
+                    html.Img(src=app.get_asset_url('16.png'), style={'width': '250px', 'vertical-align': 'top'}),
+                    html.Img(src=app.get_asset_url('17.png'), style={'width': '250px', 'vertical-align': 'top'}),
+                    html.Img(src=app.get_asset_url('18.png'), style={'width': '250px', 'vertical-align': 'top'}),
 
                     html.H4("- How to see the query result as a map:"),
                     html.Div("After submitting the query, go to the maps tab. You can see the result there. Use the tools on the top right for zoom and other functions. You can also use the dropdowns to change the properties."),
