@@ -75,15 +75,15 @@ def gen_graph_function(jsonified_ResultListdataframe):
                             dict(label="bar",
                                 method="update",
                                 args=[{"visible": [True, False, False]},
-                                {"title": "Bar Graph",}]),
+                                ]),
                             dict(label="Scatter",
                                 method="update",
                                 args=[{"visible": [False, True, False]},
-                                {"title": "Scatter Graph",}]),
+                                ]),
                             dict(label="line",
                                 method="update",
                                 args=[{"visible": [False, False, True]},
-                                {"title": "Line Graph",}]), 
+                                ]), 
                             ]),
                             pad={"r": 10, "t": 10},
                             showactive=True,
@@ -91,7 +91,6 @@ def gen_graph_function(jsonified_ResultListdataframe):
                             xanchor="left",
                             y=2,
                             yanchor="top"
-
                         ),
                         dict(buttons=buttonlist,
                         direction="down",
@@ -101,7 +100,6 @@ def gen_graph_function(jsonified_ResultListdataframe):
                         xanchor="left",
                         y=1,
                         yanchor="top"
-
                             ),
 
                         dict(buttons=buttonlist_x,
@@ -128,7 +126,7 @@ def gen_graph_function(jsonified_ResultListdataframe):
             else:
                 return True, { }, {'display': 'none'}
 
-
+#Chart Callback
 @app.callback(
     [Output("alert-chart", "is_open"),Output("graph", "figure"), Output("result-graph", "style")],
     [Input("submit-btn", "n_clicks"),
@@ -139,7 +137,7 @@ def gen_graph(n_clicks, jsonified_ResultListdataframe):
     if n_clicks > 0:
         return gen_graph_function(jsonified_ResultListdataframe)
     return False, { }, {'display': 'none'}
-#---------------------------------------------------Charts Compare Callback--------------------------------------------------------------
+#Charts Compare Callback
 @app.callback(
     [Output("alert-chart2", "is_open"),Output("graph2", "figure"),  Output("result-graph2", "style")],
     [Input("compare-btn", "n_clicks"),
