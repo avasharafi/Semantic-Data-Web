@@ -1,7 +1,7 @@
 # Semantic-Data-Web
 
 ```diff
-@@ The dashboard's deployed on this branch. @@
+! The dashboard's deployed on this branch. !
 
 ```
 
