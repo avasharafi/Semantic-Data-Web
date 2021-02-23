@@ -7,6 +7,6 @@ https://dashboard-rdf.herokuapp.com/
 
 The whole project organised in:
 
-- data folder:
-- Notebook folder:
-- 
+- data folder: contains the some query samples
+- Notebook folder: contains .ipynb verion of code
+- assset: conains style sheet  
