@@ -10,10 +10,11 @@ To run the dashboard locally,
   - cd to the directory where requirements.txt is located
   - pip install -r requirements.txt
 
-To run with voila, 
-- Install voila:
+
+-To run with voila, 
+  - Install voila:
 If you use conda, you can install it with:  
- - conda install -c conda-forge voila  
+  - conda install -c conda-forge voila  
 If you use pip, you can install it with  
   - pip install voila
 
