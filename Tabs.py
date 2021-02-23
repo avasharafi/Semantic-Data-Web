@@ -171,7 +171,7 @@ def render_content(tab):
                             id='graph',
                             figure={
                                 "layout": {
-                                    "height": 253,
+                                    "height": 340,
                                     'overflow': 'scroll'
                                 },
                             },
@@ -216,7 +216,7 @@ def render_content(tab):
                                 id='graph2',
                                 figure={
                                 "layout": {
-                                    "height": 270, 
+                                    "height": 340,
                                 },
                             },
                             ),
@@ -259,10 +259,9 @@ def render_content(tab):
                         dcc.Graph(
                             id='map',
                             figure={
-                                #"layout": {
-                                 #   "height": 500, 
-                                    
-                                #},
+                                "layout": {
+                                   "height": 340,
+                                },
                             },
                         ),                
                      ],
@@ -328,9 +327,9 @@ def render_content(tab):
                         dcc.Graph(
                             id='map2',
                             figure={
-                                #"layout": {
-                                #    "height": 500, 
-                                #},
+                                "layout": {
+                                   "height": 340,
+                                },
                             },
                         ),
 
