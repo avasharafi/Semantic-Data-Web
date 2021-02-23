@@ -11,7 +11,7 @@ To run the dashboard locally,
   - pip install -r requirements.txt
 
 
--To run with voila, 
+- To run with voila, 
   - Install voila:
 If you use conda, you can install it with:  
   - conda install -c conda-forge voila  
