@@ -112,16 +112,18 @@ def gen_graph_function(jsonified_ResultListdataframe):
                         yanchor="top"
 
                             )
-                    ]
-                )
+                    ],
 
-                fig.update_layout(
                 annotations=[
-                 dict(text="Chart's Type", x=-0.9, xref="paper", y=1.55, yref="paper",align="left", showarrow=False),
-                dict(text="AXIS-Y", x=-0.9, xref="paper", y=0.94, yref="paper",align="left", showarrow=False),
-                dict(text="AXIS-X", x=-0.9, xref="paper", y=0.54,yref="paper", showarrow=False),
+                    dict(text="Chart's Type", x=-0.9, xref="paper", y=1.55, yref="paper",align="left", showarrow=False),
+                    dict(text="AXIS-Y", x=-0.9, xref="paper", y=0.94, yref="paper",align="left", showarrow=False),
+                    dict(text="AXIS-X", x=-0.9, xref="paper", y=0.54,yref="paper", showarrow=False),
+                ],
 
-                ])
+
+
+                    margin={"r":0,"t":0,"l":0,"b":0}
+                )
 
                 return False, fig, {'display': 'block'}
             else:
