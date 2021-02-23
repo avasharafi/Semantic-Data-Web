@@ -1,5 +1,4 @@
-voila
-voila-material
+gunicorn
 ansi2html==1.6.0
 async-generator==1.10
 backports.functools-lru-cache==1.6.1
