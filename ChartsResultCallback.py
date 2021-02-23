@@ -117,7 +117,7 @@ def gen_graph_function(jsonified_ResultListdataframe):
 
                 fig.update_layout(
                 annotations=[
-                 dict(text="Chart's Type", x=-0.9, xref="paper", y=1.29, yref="paper",align="left", showarrow=False),
+                 dict(text="Chart's Type", x=-0.9, xref="paper", y=1.28, yref="paper",align="left", showarrow=False),
                 dict(text="AXIS-Y", x=-0.9, xref="paper", y=0.94, yref="paper",align="left", showarrow=False),
                 dict(text="AXIS-X", x=-0.9, xref="paper", y=0.61,yref="paper", showarrow=False),
 
