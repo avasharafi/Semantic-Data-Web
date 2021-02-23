@@ -11,3 +11,5 @@ The whole project organised in:
 - data folder: contains some query samples
 - Notebook folder: contains .ipynb version of code
 - asset: contains style sheet
+
+
