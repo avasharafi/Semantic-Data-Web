@@ -169,11 +169,11 @@ def render_content(tab):
                    children=[
                         dcc.Graph(
                             id='graph',
-                            figure={
-                                "layout": {
-                                    "height": 400,
-                                    'overflow': 'scroll'
-                                },
+                            #figure={
+                            #    "layout": {
+                            #        "height": 400,
+                            #        'overflow': 'scroll'
+                            #    },
                             },
                         ),
                 
@@ -214,10 +214,10 @@ def render_content(tab):
                        children=[
                             dcc.Graph(
                                 id='graph2',
-                                figure={
-                                "layout": {
-                                    "height": 400, 
-                                },
+                                #figure={
+                                #"layout": {
+                                #    "height": 400, 
+                                #},
                             },
                             ),
 

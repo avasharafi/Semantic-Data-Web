@@ -109,7 +109,7 @@ def plot_map_function(ResultListdataframe, df_lat, df_lon):
                    
                     #height = 253, 
                     #width = 1000,
-                   #margin={"r":0,"t":0,"l":0,"b":0}
+                  #margin={"r":0,"t":0,"l":0,"b":0}
 
                 )
 

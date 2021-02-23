@@ -89,7 +89,7 @@ def gen_graph_function(jsonified_ResultListdataframe):
                             showactive=True,
                             x=-0.9,
                             xanchor="left",
-                            y=1.5,
+                            y=1.25,
                             yanchor="top"
                         ),
                         dict(buttons=buttonlist,
@@ -115,13 +115,13 @@ def gen_graph_function(jsonified_ResultListdataframe):
                     ],
 
                 annotations=[
-                    dict(text="Chart's Type", x=-0.9, xref="paper", y=1.55, yref="paper",align="left", showarrow=False),
+                    dict(text="Chart's Type", x=-0.9, xref="paper", y=1.29, yref="paper",align="left", showarrow=False),
                     dict(text="AXIS-Y", x=-0.9, xref="paper", y=0.94, yref="paper",align="left", showarrow=False),
                     dict(text="AXIS-X", x=-0.9, xref="paper", y=0.54,yref="paper", showarrow=False),
                 ],
 
 
-
+                    height = 300,
                     margin={"r":0,"t":0,"l":0,"b":0}
                 )
 
