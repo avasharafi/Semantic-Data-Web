@@ -98,8 +98,9 @@ def gen_graph_function(jsonified_ResultListdataframe):
                         showactive=True,
                         x=-0.9,
                         xanchor="left",
-                        y=0.90,
+                        y=1,
                         yanchor="top"
+
                             ),
 
                         dict(buttons=buttonlist_x,
@@ -108,22 +109,19 @@ def gen_graph_function(jsonified_ResultListdataframe):
                         showactive=True,
                         x=-0.9,
                         xanchor="left",
-                        y=0.50,
+                        y=0,
                         yanchor="top"
 
                             )
-                    ],
-
-                annotations=[
-                    dict(text="Chart's Type", x=-0.9, xref="paper", y=1.15, yref="paper",align="left", showarrow=False),
-                    dict(text="AXIS-Y", x=-0.9, xref="paper", y=0.94, yref="paper",align="left", showarrow=False),
-                    dict(text="AXIS-X", x=-0.9, xref="paper", y=0.54,yref="paper", showarrow=False),
-                ],
-
-
-                    height = 300,
-                    margin={"r":0,"t":0,"l":0,"b":0}
+                    ]
                 )
+
+                fig.update_layout(
+                annotations=[
+                dict(text="AXIS-Y", x=-0.9, xref="paper", y=1.25, yref="paper",align="left", showarrow=False),
+                dict(text="AXIS-X", x=-0.9, xref="paper", y=0,yref="paper", showarrow=False),
+
+                ])
 
                 return False, fig, {'display': 'block'}
             else:
