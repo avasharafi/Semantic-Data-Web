@@ -58,7 +58,7 @@ def gen_graph_function(jsonified_ResultListdataframe):
 
                 buttonlist_x = []
                 for col in ResultListdataframe.columns:
-                      buttonlist_x.append(
+                    buttonlist_x.append(
                         dict(
                         args=['x',[ResultListdataframe[str(col)]] ],
                         label=str(col),
@@ -89,7 +89,7 @@ def gen_graph_function(jsonified_ResultListdataframe):
                             showactive=True,
                             x=-0.9,
                             xanchor="left",
-                            y=1.25,
+                            y=1.5,
                             yanchor="top"
                         ),
                         dict(buttons=buttonlist,
@@ -108,7 +108,7 @@ def gen_graph_function(jsonified_ResultListdataframe):
                         showactive=True,
                         x=-0.9,
                         xanchor="left",
-                        y=0.60,
+                        y=0.50,
                         yanchor="top"
 
                             )
@@ -117,9 +117,9 @@ def gen_graph_function(jsonified_ResultListdataframe):
 
                 fig.update_layout(
                 annotations=[
-                 dict(text="Chart's Type", x=-0.9, xref="paper", y=1.28, yref="paper",align="left", showarrow=False),
+                 dict(text="Chart's Type", x=-0.9, xref="paper", y=1.55, yref="paper",align="left", showarrow=False),
                 dict(text="AXIS-Y", x=-0.9, xref="paper", y=0.94, yref="paper",align="left", showarrow=False),
-                dict(text="AXIS-X", x=-0.9, xref="paper", y=0.61,yref="paper", showarrow=False),
+                dict(text="AXIS-X", x=-0.9, xref="paper", y=0.54,yref="paper", showarrow=False),
 
                 ])
 
