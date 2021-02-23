@@ -116,8 +116,7 @@ def plot_map_function(ResultListdataframe, df_lat, df_lon):
             
         return fig
 
-
-        #---------------------------------------------------Charts Function--------------------------------------------------------------
+#map function
 def gen_map_function(n_clicks, jsonified_ResultListdataframe):
     
     if n_clicks > 0:
@@ -148,7 +147,7 @@ def gen_map_function(n_clicks, jsonified_ResultListdataframe):
     return False, False, { }, {'display': 'none'}
 
 
-    #---------------------------------------------------Charts Callback--------------------------------------------------------------
+# map callback
 @app.callback(
     [Output("alert-map", "is_open"),Output("alert-map3", "is_open"),Output("map", "figure"), Output('result-map', 'style')],
     [Input("submit-btn", "n_clicks"),
@@ -157,7 +156,7 @@ def gen_map_function(n_clicks, jsonified_ResultListdataframe):
 def gen_map(n_clicks, jsonified_ResultListdataframe):
     return gen_map_function(n_clicks, jsonified_ResultListdataframe)
     
-#---------------------------------------------------Charts Compare Callback--------------------------------------------------------------
+# map compare callback
 @app.callback(
     [Output("alert-map2", "is_open"),Output("alert-map4", "is_open"),Output("map2", "figure"), Output('result-map2', 'style')],
     [Input("compare-btn", "n_clicks"),
