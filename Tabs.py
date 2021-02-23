@@ -173,7 +173,7 @@ def render_content(tab):
                                # "layout": {
                                #     "height": 253,
                                #     'overflow': 'scroll'
-                                },
+                               # },
                             },
                         ),
                 
