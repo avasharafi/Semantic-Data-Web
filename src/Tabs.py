@@ -163,36 +163,25 @@ def render_content(tab):
         ])
     elif tab == 'Charts':
         return html.Div([
-             dcc.Loading(id = "loading-chart", children=[
-               html.Div(
+                 html.Div(
                    id="result-graph",
                    className="result-graph",
                    children=[
                         dcc.Graph(
                             id='graph',
                             figure={
-                               "layout": {
+                               #"layout": {
                                    # "height": 400,
-                                    'overflow': 'scroll',
-                                },
+                                #    'overflow': 'scroll',
+                                #},
                             },
-                        ),
-                
-                     ],
-                 style= {
+                        )],#dcc graph
+                    style= {
                       'display': 'none',
-                      }  
-               )
-               ], 
-                type="circle",
-                style={
-                    'marginTop': '500px',  
-                    'background': 'transparent',
-                }
-               ),
-
+                      },  
+               ), 
                 html.Div([
-                     dbc.Alert(
+                    dbc.Alert(
                          ["There are not enough data for generating the charts."],
                          id="alert-chart",
                          is_open=False,
@@ -211,36 +200,24 @@ def render_content(tab):
                             'fontSize': 'small',
                             'color': 'red',
                             'textAlign': 'center'
-                            },
-                         
-                        
-                        
+                            }, 
                      ),    
                  ]),
-            dcc.Loading(id = "loading-chart", children=[
                 html.Div(
                        id="result-graph2",
                        className="result-graph",
                        children=[
                             dcc.Graph(
                                 id='graph2',
-                               # figure={
+                                figure={
                                # "layout": {
                                #     "height": 400,
                                # },
-                            #},
+                                },
                             ),
-
                          ],
                         style={'display': 'none'}
-                   )],
-                    type="circle",
-                    style={
-                        'marginTop': '500px',  
-                        'background': 'transparent',
-                    }
-                ),
-
+                ),  
                 html.Div([
                      dbc.Alert(
                          ["There are not enough data for generating the charts."],
@@ -260,13 +237,9 @@ def render_content(tab):
                             'fontSize': 'small',
                             'color': 'red',
                             'textAlign': 'center'
-                            },
-                         
-                     )   
-                 ]),                
-
-
-        ])
+                            },)   
+                ])                
+            ])
     elif tab == 'Maps':
         return html.Div([
                html.Div(
