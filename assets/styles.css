@@ -108,10 +108,10 @@ body {
   cursor:default;
 }
 
- .result-graph {
+ /*.result-graph {
     height: 30%; 
-    /*width: 60%;*/
-}
+    /*width: 60%;
+}*/
 .tutorial {
     background-color: #f6f5f5;
     color: rgb(70, 79, 85);
