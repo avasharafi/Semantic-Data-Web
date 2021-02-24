@@ -49,8 +49,8 @@ app.layout = html.Div([
                     dcc.Textarea(
                         id= "query-endpoint", 
                         value="",
-                        placeholder="Enter your SPARQL query endpoint.",
-                        className="querybox--endpoint"
+                        placeholder="Enter your SPARQL Endpoint.",
+                        className="querybox--endpoin
                     ),
                     du.Upload(
                         id='upload-data',
@@ -96,7 +96,7 @@ app.layout = html.Div([
                     dcc.Textarea(
                         id= "query-endpoint2", 
                         value="",
-                        placeholder="Enter your SPARQL query endpoint.",
+                        placeholder="Enter your SPARQL Endpoint.",
                         className="querybox--endpoint"
                     ),
                     du.Upload(
