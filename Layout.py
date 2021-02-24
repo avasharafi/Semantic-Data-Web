@@ -50,7 +50,7 @@ app.layout = html.Div([
                         id= "query-endpoint", 
                         value="",
                         placeholder="Enter your SPARQL Endpoint.",
-                        className="querybox--endpoin
+                        className="querybox--endpoint",
                     ),
                     du.Upload(
                         id='upload-data',
