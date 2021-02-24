@@ -72,3 +72,54 @@ WHERE
  }
 }
 ORDER BY ASC (?name)",https://query.wikidata.org/sparql
+"All people born in
+London between 1900-1950","PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT DISTINCT ?name ?birth ?death
+WHERE {
+?person dbo:birthPlace dbr:London .
+?person dbo:birthDate ?birth .
+?person rdfs:label ?name FILTER (lang(?name) = ""en"").
+OPTIONAL { ?person dbo:deathDate ?death . }
+FILTER ((?birth > ""1900-01-01""^^xsd:date) &&
+(?birth < ""1950-01-01""^^xsd:date)) .
+}
+ORDER BY (?birth)",http://dbpedia.org/sparql
+"Names of the universities
+that were established in English speaking countries before
+the beginning of the 20th century","PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT ?uniName ?cName ?students
+WHERE {
+?uni rdf:type dbo:University ;
+foaf:name ?uniName FILTER (lang(?uniName)=""en"").
+?uni dbp:established ?creationDate ;
+dbo:country ?country .
+?country dbo:language dbr:English_language ;
+foaf:name ?cName FILTER (lang(?cName)=""en"") .
+OPTIONAL { ?uni dbo:numberOfUndergraduateStudents ?students . }
+FILTER ( ?creationDate < ""1900-01-01""^^xsd:date ) .
+}
+ORDER BY (?creationDate)",http://dbpedia.org/sparql
+"Soccer players, who are born in a country with more than 10 million inhabitants","PREFIX dbo: <http://dbpedia.org/ontology/>
+
+SELECT distinct ?soccerplayer ?countryOfBirth ?team ?countryOfTeam ?stadiumcapacity
+{ 
+?soccerplayer a dbo:SoccerPlayer ;
+   dbo:position|dbp:position <http://dbpedia.org/resource/Goalkeeper_(association_football)> ;
+   dbo:birthPlace/dbo:country* ?countryOfBirth ;
+   #dbo:number 13 ;
+   dbo:team ?team .
+   ?team dbo:capacity ?stadiumcapacity ; dbo:ground ?countryOfTeam . 
+   ?countryOfBirth a dbo:Country ; dbo:populationTotal ?population .
+   ?countryOfTeam a dbo:Country .
+FILTER (?countryOfTeam != ?countryOfBirth)
+FILTER (?stadiumcapacity > 30000)
+FILTER (?population > 10000000)
+} order by ?soccerplayer",http://dbpedia.org/sparql
