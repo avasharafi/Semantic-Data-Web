@@ -56,7 +56,7 @@ def render_content(tab):
                 children=[
                     dash_table.DataTable(
                         id='Resulttable',
-                        style_table={'height': '250px', 'overflowY': 'auto'},
+                        style_table={'height': '327px', 'overflowY': 'auto'},
                         data=start_table_df.to_dict('records'), 
                         columns = [{'id': c, 'name': c} for c in start_table_df.columns],
                         style_cell=dict(textAlign='left'),   
@@ -110,7 +110,7 @@ def render_content(tab):
                 children=[
                     dash_table.DataTable(
                         id='Resulttable2',
-                        style_table={'height': '250px', 'overflowY': 'auto'},
+                        style_table={'height': '327px', 'overflowY': 'auto'},
                         data=start_table_df.to_dict('records'), 
                         columns = [{'id': c, 'name': c} for c in start_table_df.columns],
                         style_cell=dict(textAlign='left'),   
@@ -171,7 +171,7 @@ def render_content(tab):
                             id='graph',
                             figure={
                                 "layout": {
-                                    "height": 340,
+                                    "height": 400,
                                     'overflow': 'scroll'
                                 },
                             },
@@ -216,7 +216,7 @@ def render_content(tab):
                                 id='graph2',
                                 figure={
                                 "layout": {
-                                    "height": 340,
+                                    "height": 400,
                                 },
                             },
                             ),

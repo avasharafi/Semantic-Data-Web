@@ -9,5 +9,5 @@ import ChartsResultCallback
 import MapsCallbacks
 
 
-server = app.server
-# app.run_server(debug=True)
+
+app.run_server(debug=True)
