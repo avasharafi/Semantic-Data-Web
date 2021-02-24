@@ -58,8 +58,7 @@ app.layout = html.Div([
                         filetypes=['nt', 'ttl','rdf','n3','xml','tql'],
                         default_style={
                             'width': '95%',
-                            'min-height': '130px !important',
-                            'height': '13px',
+                            'height': '130px',
                             'lineHeight': '13px',
                             'borderWidth': '1px',
                             'borderStyle': 'dashed',
@@ -106,7 +105,7 @@ app.layout = html.Div([
                         filetypes=['nt', 'ttl','rdf','n3','xml','tql'],
                         default_style={
                             'width': '95%',
-                            'height': '13px',
+                            'height': '130px',
                             'lineHeight': '13px',
                             'borderWidth': '1px',
                             'borderStyle': 'dashed',
