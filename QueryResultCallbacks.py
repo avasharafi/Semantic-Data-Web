@@ -9,7 +9,7 @@ import urllib.request,urllib.parse,urllib.error
 import pandas as pd
 import json
 import rdflib
-from rdflib.store import Store
+from pyparsing import ParseException
 from rdflib.plugin import get as plugin
 import time
 from MainApp import app
@@ -102,7 +102,10 @@ def get_data_function(value, endpoint,endpointType):
             end = time.perf_counter()
             Log_Parse_Data(endpoint,round(end - start,3))
             start2 = time.perf_counter()
-            qres = g.query(value)
+            try:
+                qres = g.query(value)
+            except ParseException:
+                return True,False,None
             ResultListdataframe = pd.DataFrame (qres.bindings)
             end2 = time.perf_counter()
             Log_Query_Data(endpoint,value, len(ResultListdataframe.index),ResultListdataframe.shape[1],round(end2 - start2,3))            
