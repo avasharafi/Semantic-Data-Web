@@ -109,7 +109,7 @@ with open(os.path.join(UPLOAD_DIRECTORY, 'Book3.csv'), 'rt') as f:
 def toggle_compare(n_clicks):
     if n_clicks > 0:
         if (n_clicks % 2) == 0:
-            return {'top': '-333px'}
+            return {'top': '-335px'}
         else:   
             return {'top': '0'}
     return {}
