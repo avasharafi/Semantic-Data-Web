@@ -122,9 +122,15 @@ input[name="upload-data2-upload"] {
     width: 276px !important;
     padding: 0px !important;
     position: inherit !important;
+    height: 5px !important;
 }
 input[name="upload-data-upload"] {
     width: 276px !important;
     padding: 0px !important;
     position: inherit !important;
+    height: 5px !important;
+}
+.progress {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
 }
