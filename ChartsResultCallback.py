@@ -53,7 +53,7 @@ def gen_graph_function(jsonified_ResultListdataframe):
                       buttonlist.append(
                         dict(
                         args=['y',[ResultListdataframe[str(col)]] ],
-                        label=str(col),
+                        label='Select...',
                         method='restyle'
                     )
                   )
@@ -64,7 +64,7 @@ def gen_graph_function(jsonified_ResultListdataframe):
                     buttonlist_x.append(
                         dict(
                         args=['x',[ResultListdataframe[str(col)]] ],
-                        label=str(col),
+                        label='Select...',
                         method='restyle'
                     )
                   )
@@ -109,7 +109,7 @@ def gen_graph_function(jsonified_ResultListdataframe):
                         dict(buttons=buttonlist_x,
                         direction="down",
                         pad={"r": 10, "t": 10},
-                        showactive=True,
+                        showactive=False,
                         x=-0.9,
                         xanchor="left",
                         y=0,
