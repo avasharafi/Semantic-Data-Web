@@ -56,7 +56,7 @@ def render_content(tab):
                 children=[
                     dash_table.DataTable(
                         id='Resulttable',
-                        style_table={'height': '250px', 'overflowY': 'auto'},
+                        style_table={'height': '327px', 'overflowY': 'auto'},
                         data=start_table_df.to_dict('records'), 
                         columns = [{'id': c, 'name': c} for c in start_table_df.columns],
                         style_cell=dict(textAlign='left'),   
@@ -110,7 +110,7 @@ def render_content(tab):
                 children=[
                     dash_table.DataTable(
                         id='Resulttable2',
-                        style_table={'height': '250px', 'overflowY': 'auto'},
+                        style_table={'height': '327px', 'overflowY': 'auto'},
                         data=start_table_df.to_dict('records'), 
                         columns = [{'id': c, 'name': c} for c in start_table_df.columns],
                         style_cell=dict(textAlign='left'),   
@@ -171,7 +171,7 @@ def render_content(tab):
                             id='graph',
                             figure={
                                 "layout": {
-                                    "height": 340,
+                                    "height": 400,
                                     'overflow': 'scroll'
                                 },
                             },
@@ -216,7 +216,7 @@ def render_content(tab):
                                 id='graph2',
                                 figure={
                                 "layout": {
-                                    "height": 340,
+                                    "height": 400,
                                 },
                             },
                             ),
@@ -435,32 +435,31 @@ def render_content(tab):
                     html.Div("After submitting the query, go to the tables tab. You can see the query result there. you can also use the dropdowns to change the properties. Also you can export the table as a csv file by clicking on the export button."),
                     html.Img(src=app.get_asset_url('5.png'), style={'width': '250px', 'vertical-align': 'top'}),
                     html.Img(src=app.get_asset_url('6.png'), style={'width': '250px', 'vertical-align': 'top'}),
-                    html.Img(src=app.get_asset_url('7.png'), style={'width': '500px', 'vertical-align': 'top'}),
-                    html.Img(src=app.get_asset_url('8.png'), style={'width': '250px', 'vertical-align': 'top'}),
+                    html.Img(src=app.get_asset_url('7.png'), style={'width': '250px', 'vertical-align': 'top'}),
+                    html.Img(src=app.get_asset_url('5.png'), style={'width': '250px', 'vertical-align': 'top'}),
 
                     html.H4("- How to see the query result as a chart:"),
                     html.Div("After submitting the query, go to the charts tab to see the query result as a chart. Use the dropdowns to change the properties. You can also use the tools to zoom or export the chart as an image."),
                     html.Img(src=app.get_asset_url('5.png'), style={'width': '250px', 'vertical-align': 'top'}),
                     html.Img(src=app.get_asset_url('10.png'), style={'width': '250px', 'vertical-align': 'top'}),
-                    html.Img(src=app.get_asset_url('15.png'), style={'width': '500px', 'vertical-align': 'top'}),
-                    html.Img(src=app.get_asset_url('16.png'), style={'width': '500px', 'vertical-align': 'top'}),
-                    html.Img(src=app.get_asset_url('17.png'), style={'width': '500px', 'vertical-align': 'top'}),
-                    html.Img(src=app.get_asset_url('18.png'), style={'width': '500px', 'vertical-align': 'top'}),
+                    html.Img(src=app.get_asset_url('15.png'), style={'width': '250px', 'vertical-align': 'top'}),
+                    html.Img(src=app.get_asset_url('16.png'), style={'width': '250px', 'vertical-align': 'top'}),
+                    html.Img(src=app.get_asset_url('17.png'), style={'width': '250px', 'vertical-align': 'top'}),
+                    html.Img(src=app.get_asset_url('18.png'), style={'width': '250px', 'vertical-align': 'top'}),
 
                     html.H4("- How to see the query result as a map:"),
                     html.Div("After submitting the query, go to the maps tab. You can see the result there. Use the tools on the top right for zoom and other functions. You can also use the dropdowns to change the properties."),
                     html.Img(src=app.get_asset_url('5.png'), style={'width': '250px', 'vertical-align': 'top'}),
                     html.Img(src=app.get_asset_url('11.png'), style={'width': '250px', 'vertical-align': 'top'}),
-                    html.Img(src=app.get_asset_url('19.png'), style={'width': '500px', 'vertical-align': 'top'}),
 
                     html.H4("- How to compare two queries:"),
                     html.Div("First, submit the first query either by querying an endpoint or uploading the RDF file. Then, open the compare text area by clicking on toggle compare box button. Then add the second query in one of the two possible ways described and press COMPARE button."),
-                    html.Img(src=app.get_asset_url('9.png'), style={'width': '500px', 'vertical-align': 'top'}),
+                    html.Img(src=app.get_asset_url('5.png'), style={'width': '250px', 'vertical-align': 'top'}),
 
                     html.H4("- How to use query samples:"),
                     html.Div("In the query samples tab, you will find several samples. All you have to do is choosing one of them. The query will appear in the query text area and you can also see the endpoint in the endpoint text area. After clicking on SUBMIT button, you can see the query result in the table, chart or map tab."),
                     html.Img(src=app.get_asset_url('13.png'), style={'width': '250px', 'vertical-align': 'top'}),
-                    html.Img(src=app.get_asset_url('12.png'), style={'width': '500px', 'vertical-align': 'top'}),
+                    html.Img(src=app.get_asset_url('12.png'), style={'width': '250px', 'vertical-align': 'top'}),
                     html.Img(src=app.get_asset_url('14.png'), style={'width': '250px', 'vertical-align': 'top'}),
                 ]),
         ])

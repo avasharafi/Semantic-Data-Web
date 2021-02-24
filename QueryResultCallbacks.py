@@ -67,13 +67,17 @@ def sql(value, endpoint):
 
             ResultListdataframe = pd.DataFrame(out, columns=cols)
 
-            
-
-    
+            #to clean the data
+            for col in ResultListdataframe.columns:
+                ResultListdataframe[col] = ResultListdataframe[col].str.split(pat="/").str[-1]
 
 
             if set(['lon','lat']).issubset(ResultListdataframe.columns): 
+                if 'coord' in ResultListdataframe.columns:
+                    ResultListdataframe['coord'] = ResultListdataframe['coord'].str.split("\(", expand=True)[1]
+                    ResultListdataframe['coord'] = ResultListdataframe['coord'].str.split("\)", expand=True)
                 return ResultListdataframe
+ 
 
             elif 'coord' in ResultListdataframe.columns:
                 ResultListdataframe = extract_lon_lat(ResultListdataframe)

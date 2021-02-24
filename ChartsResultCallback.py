@@ -116,16 +116,19 @@ def gen_graph_function(jsonified_ResultListdataframe):
                         yanchor="top"
 
                             )
-                    ]
+                    ],
+
+                    annotations=[
+                        dict(text="AXIS-Y", x=-0.9, xref="paper", y=1.20, yref="paper",align="left", showarrow=False),
+                        dict(text="AXIS-X", x=-0.9, xref="paper", y=0,yref="paper", showarrow=False),
+                        ],
+
+                    uniformtext_minsize=1, 
+                    uniformtext_mode='hide'
+
+
                 )
-
-                fig.update_layout(
-                annotations=[
-                dict(text="AXIS-Y", x=-0.9, xref="paper", y=1.25, yref="paper",align="left", showarrow=False),
-                dict(text="AXIS-X", x=-0.9, xref="paper", y=0,yref="paper", showarrow=False),
-
-                ])
-
+                
                 return False, fig, {'display': 'block'}
             else:
                 return True, { }, {'display': 'none'}
