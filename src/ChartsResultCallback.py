@@ -53,7 +53,7 @@ def gen_graph_function(jsonified_ResultListdataframe):
                       buttonlist.append(
                         dict(
                         args=['y',[ResultListdataframe[str(col)]] ],
-                        label=str(col),
+                        label="Y= "+str(col),
                         method='restyle'
                     )
                   )
@@ -64,7 +64,7 @@ def gen_graph_function(jsonified_ResultListdataframe):
                     buttonlist_x.append(
                         dict(
                         args=['x',[ResultListdataframe[str(col)]] ],
-                        label=str(col),
+                        label="X= "+str(col),
                         method='restyle'
                     )
                   )
@@ -99,10 +99,11 @@ def gen_graph_function(jsonified_ResultListdataframe):
                         direction="down",
                         pad={"r": 10, "t": 10},
                         showactive=True,
-                        x=-0.9,
+                        x=0.1,
                         xanchor="left",
-                        y=1,
-                        yanchor="top"
+                        y=2,
+                        yanchor="top",
+                        active=1
 
                             ),
 
@@ -112,17 +113,25 @@ def gen_graph_function(jsonified_ResultListdataframe):
                         showactive=True,
                         x=-0.9,
                         xanchor="left",
-                        y=0,
+                        y=0.7,
                         yanchor="top"
 
                             )
                     ],
 
-                    annotations=[
-                        dict(text="AXIS-Y", x=-0.9, xref="paper", y=1.20, yref="paper",align="left", showarrow=False),
-                        dict(text="AXIS-X", x=-0.9, xref="paper", y=0,yref="paper", showarrow=False),
-                        ],
+                  #  annotations=[
+                  #      dict(text="AXIS-Y", x=0.1, xref="paper", y=1.90, yref="paper",align="left", showarrow=False),
+                  #      dict(text="AXIS-X", x=-0.9, xref="paper", y=-0.2,yref="paper", showarrow=False),
+                  #      ],
                 )
+
+                fig.update_layout(
+                    height=400,
+                    autosize=False,
+                    margin=dict(t=0, b=0, l=0, r=0),
+                    template="plotly_white",
+                )
+
 
                 
                 return False, fig, {'display': 'block'}

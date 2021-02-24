@@ -163,6 +163,7 @@ def render_content(tab):
         ])
     elif tab == 'Charts':
         return html.Div([
+             dcc.Loading(id = "loading-chart", children=[
                html.Div(
                    id="result-graph",
                    className="result-graph",
@@ -170,8 +171,8 @@ def render_content(tab):
                         dcc.Graph(
                             id='graph',
                             figure={
-                                "layout": {
-                                    "height": 400,
+                               "layout": {
+                                   # "height": 400,
                                     'overflow': 'scroll',
                                 },
                             },
@@ -181,6 +182,13 @@ def render_content(tab):
                  style= {
                       'display': 'none',
                       }  
+               )
+               ], 
+                type="circle",
+                style={
+                    'marginTop': '500px',  
+                    'background': 'transparent',
+                }
                ),
 
                 html.Div([
@@ -209,23 +217,29 @@ def render_content(tab):
                         
                      ),    
                  ]),
-    
+            dcc.Loading(id = "loading-chart", children=[
                 html.Div(
                        id="result-graph2",
                        className="result-graph",
                        children=[
                             dcc.Graph(
                                 id='graph2',
-                                figure={
-                                "layout": {
-                                    "height": 400,
-                                },
-                            },
+                               # figure={
+                               # "layout": {
+                               #     "height": 400,
+                               # },
+                            #},
                             ),
 
                          ],
                         style={'display': 'none'}
-                   ),
+                   )],
+                    type="circle",
+                    style={
+                        'marginTop': '500px',  
+                        'background': 'transparent',
+                    }
+                ),
 
                 html.Div([
                      dbc.Alert(
@@ -249,7 +263,8 @@ def render_content(tab):
                             },
                          
                      )   
-                 ]),
+                 ]),                
+
 
         ])
     elif tab == 'Maps':
