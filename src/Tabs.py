@@ -172,13 +172,15 @@ def render_content(tab):
                             figure={
                                 "layout": {
                                     "height": 400,
-                                    'overflow': 'scroll'
+                                    'overflow': 'scroll',
                                 },
                             },
                         ),
                 
                      ],
-                 style= {'display': 'none'}  
+                 style= {
+                      'display': 'none',
+                      }  
                ),
 
                 html.Div([
