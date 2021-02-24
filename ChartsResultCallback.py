@@ -96,7 +96,6 @@ def gen_graph_function(jsonified_ResultListdataframe):
                             yanchor="top"
                         ),
                         dict(buttons=buttonlist,
-                        name="Select Y"
                         direction="down",
                         pad={"r": 10, "t": 10},
                         showactive=True,
