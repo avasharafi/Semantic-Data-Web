@@ -22,7 +22,7 @@ body {
     background-color: #f6f5f5;
     display: block;
     position: relative;
-    top: -333px;
+    top: -336px;
     transition: top 2s;
     z-index:1;
 }
@@ -132,5 +132,5 @@ input[name="upload-data-upload"] {
 }
 .progress {
     margin-top: 0px !important;
-    margin-bottom: 0px !important;
+    margin-bottom: 4px !important;
 }
