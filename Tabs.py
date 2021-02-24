@@ -13,25 +13,7 @@ from HelperFunctions import start_table_df
 
 
 
-# selected tab callback 
-table_header = [
-    html.Thead(html.Tr([html.Th("File"), html.Th("Query")]))
-]
-query1=html.Div("select * where {<http://de.dbpedia.org/resource/Karlsruhe> ?p ?o .}")
-query2=html.Div([
-    html.Div("select (COUNT(?person)  as ?cnt)  ?name where {"),
-    html.Div("  ?person <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"),
-    html.Div("http://swrc.ontoware.org/ontology#Person> . "),
-    html.Div("  ?person <http://swrc.ontoware.org/ontology#affiliation> ?aff ."),
-    html.Div("  #  ?aff a <http://swrc.ontoware.org/ontology#affiliation>."),
-    html.Div("  ?aff <http://swrc.ontoware.org/ontology#name> ?name ."),
-    html.Div("} group by ?name")
-])
-
-row1 = html.Tr([html.Td(html.A("Karl.n3",href="../data/Karl.n3",download="Karl.n3")), html.Td(query1)])
-row2 = html.Tr([html.Td(html.A("aifb_fixed_complete.nt",href="../data/aifb_fixed_complete.nt",download="aifb_fixed_complete.nt")), html.Td(query2)])
-
-table_body = [html.Tbody([row1, row2])]
+# selected tab callback
 
 #render page for selected tab
 @app.callback(
@@ -412,7 +394,6 @@ def render_content(tab):
                         column_selectable='single'
                     )
                 ]),
-                # dbc.Table(table_header + table_body, bordered=True,style={'fontSize':'small'}),
         ])
     elif tab == 'Tutorial':
         return html.Div([
@@ -435,31 +416,32 @@ def render_content(tab):
                     html.Div("After submitting the query, go to the tables tab. You can see the query result there. you can also use the dropdowns to change the properties. Also you can export the table as a csv file by clicking on the export button."),
                     html.Img(src=app.get_asset_url('5.png'), style={'width': '250px', 'vertical-align': 'top'}),
                     html.Img(src=app.get_asset_url('6.png'), style={'width': '250px', 'vertical-align': 'top'}),
-                    html.Img(src=app.get_asset_url('7.png'), style={'width': '250px', 'vertical-align': 'top'}),
-                    html.Img(src=app.get_asset_url('5.png'), style={'width': '250px', 'vertical-align': 'top'}),
+                    html.Img(src=app.get_asset_url('7.png'), style={'width': '500px', 'vertical-align': 'top'}),
+                    html.Img(src=app.get_asset_url('8.png'), style={'width': '250px', 'vertical-align': 'top'}),
 
                     html.H4("- How to see the query result as a chart:"),
                     html.Div("After submitting the query, go to the charts tab to see the query result as a chart. Use the dropdowns to change the properties. You can also use the tools to zoom or export the chart as an image."),
                     html.Img(src=app.get_asset_url('5.png'), style={'width': '250px', 'vertical-align': 'top'}),
                     html.Img(src=app.get_asset_url('10.png'), style={'width': '250px', 'vertical-align': 'top'}),
-                    html.Img(src=app.get_asset_url('15.png'), style={'width': '250px', 'vertical-align': 'top'}),
-                    html.Img(src=app.get_asset_url('16.png'), style={'width': '250px', 'vertical-align': 'top'}),
-                    html.Img(src=app.get_asset_url('17.png'), style={'width': '250px', 'vertical-align': 'top'}),
-                    html.Img(src=app.get_asset_url('18.png'), style={'width': '250px', 'vertical-align': 'top'}),
+                    html.Img(src=app.get_asset_url('15.png'), style={'width': '500px', 'vertical-align': 'top'}),
+                    html.Img(src=app.get_asset_url('16.png'), style={'width': '500px', 'vertical-align': 'top'}),
+                    html.Img(src=app.get_asset_url('17.png'), style={'width': '500px', 'vertical-align': 'top'}),
+                    html.Img(src=app.get_asset_url('18.png'), style={'width': '500px', 'vertical-align': 'top'}),
 
                     html.H4("- How to see the query result as a map:"),
                     html.Div("After submitting the query, go to the maps tab. You can see the result there. Use the tools on the top right for zoom and other functions. You can also use the dropdowns to change the properties."),
                     html.Img(src=app.get_asset_url('5.png'), style={'width': '250px', 'vertical-align': 'top'}),
                     html.Img(src=app.get_asset_url('11.png'), style={'width': '250px', 'vertical-align': 'top'}),
+                    html.Img(src=app.get_asset_url('19.png'), style={'width': '500px', 'vertical-align': 'top'}),
 
                     html.H4("- How to compare two queries:"),
                     html.Div("First, submit the first query either by querying an endpoint or uploading the RDF file. Then, open the compare text area by clicking on toggle compare box button. Then add the second query in one of the two possible ways described and press COMPARE button."),
-                    html.Img(src=app.get_asset_url('5.png'), style={'width': '250px', 'vertical-align': 'top'}),
+                    html.Img(src=app.get_asset_url('9.png'), style={'width': '500px', 'vertical-align': 'top'}),
 
                     html.H4("- How to use query samples:"),
                     html.Div("In the query samples tab, you will find several samples. All you have to do is choosing one of them. The query will appear in the query text area and you can also see the endpoint in the endpoint text area. After clicking on SUBMIT button, you can see the query result in the table, chart or map tab."),
                     html.Img(src=app.get_asset_url('13.png'), style={'width': '250px', 'vertical-align': 'top'}),
-                    html.Img(src=app.get_asset_url('12.png'), style={'width': '250px', 'vertical-align': 'top'}),
+                    html.Img(src=app.get_asset_url('12.png'), style={'width': '500px', 'vertical-align': 'top'}),
                     html.Img(src=app.get_asset_url('14.png'), style={'width': '250px', 'vertical-align': 'top'}),
                 ]),
         ])
