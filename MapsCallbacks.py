@@ -10,7 +10,7 @@ import pandas as pd
 from MainApp import app
 
 
-def plot_map_function(ResultListdataframe, df_lat, df_lon):
+def plot_map_function(ResultListdataframe, df_lat, df_lon, index0, index1):
     
         fig = go.Figure()
         
@@ -73,7 +73,8 @@ def plot_map_function(ResultListdataframe, df_lat, df_lon):
                         x=-0.9,
                         xanchor="left",
                         y=1.25,
-                        yanchor="top"
+                        yanchor="top",
+                        active=0,
                         ), 
                     
                      dict(
@@ -84,7 +85,8 @@ def plot_map_function(ResultListdataframe, df_lat, df_lon):
                         x=-0.9,
                         xanchor="left",
                         y=0.90,
-                        yanchor="top"
+                        yanchor="top",
+                        active=index0,
                         ), 
                     
                       dict(
@@ -95,7 +97,8 @@ def plot_map_function(ResultListdataframe, df_lat, df_lon):
                         x=-0.9,
                         xanchor="left",
                         y=0.60,
-                        yanchor="top"
+                        yanchor="top",
+                        active=index1,
                         ), 
                     
                     
@@ -132,12 +135,14 @@ def gen_map_function(n_clicks, jsonified_ResultListdataframe):
             if len(ResultListdataframe.columns) > 1:
                 
                 if set(['lon','lat']).issubset(ResultListdataframe.columns): 
-                    fig = plot_map_function(ResultListdataframe, ResultListdataframe['lat'], ResultListdataframe['lon'])
+                    index0 = ResultListdataframe.columns.get_loc('lat') 
+                    index1 = ResultListdataframe.columns.get_loc('lon')  
+                    fig = plot_map_function(ResultListdataframe, ResultListdataframe['lat'], ResultListdataframe['lon'], index0,index1)
 
                     return False, False, fig, {'display': 'block'}
 
                 else:
-                    fig = plot_map_function(ResultListdataframe, ResultListdataframe.iloc[:, 0], ResultListdataframe.iloc[:, 1])
+                    fig = plot_map_function(ResultListdataframe, ResultListdataframe.iloc[:, 0], ResultListdataframe.iloc[:, 1], 0, 1)
 
                     return True, False, fig, {'display': 'block'}
             else:
