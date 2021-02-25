@@ -397,9 +397,9 @@ def render_content(tab):
 
                     html.H4("- How to query an RDF file:"),
                     html.Div("Click on the upload area or simply drag the RDF file and drop it in the upload area and then write the query in query text area and finally press the SUBMIT button."),
-                    html.Img(src=app.get_asset_url('2.png'), style={'width': '250px', 'vertical-align': 'top'}),
-                    html.Img(src=app.get_asset_url('3.png'), style={'width': '250px', 'vertical-align': 'top'}),
-                    html.Img(src=app.get_asset_url('4.png'), style={'width': '250px', 'vertical-align': 'top'}),
+                    html.Img(src=app.get_asset_url('upload01.png'), style={'width': '250px', 'vertical-align': 'top'}),
+                    html.Img(src=app.get_asset_url('upload02.png'), style={'width': '250px', 'vertical-align': 'top'}),
+                    html.Img(src=app.get_asset_url('upload03.png'), style={'width': '250px', 'vertical-align': 'top'}),
 
                     html.H4("- How to see the query result as a table:"),
                     html.Div("After submitting the query, go to the tables tab. You can see the query result there. you can also use the dropdowns to change the properties. Also you can export the table as a csv file by clicking on the export button."),
@@ -420,7 +420,7 @@ def render_content(tab):
                     html.H4("- How to see the query result as a map:"),
                     html.Div("After submitting the query, go to the maps tab. You can see the result there. Use the tools on the top right for zoom and other functions. You can also use the dropdowns to change the properties."),
                     html.Img(src=app.get_asset_url('querybox0.png'), style={'width': '250px', 'vertical-align': 'top'}),
-                    html.Img(src=app.get_asset_url('11.png'), style={'width': '250px', 'vertical-align': 'top'}),
+                    html.Img(src=app.get_asset_url('map01.png'), style={'width': '250px', 'vertical-align': 'top'}),
                     html.Img(src=app.get_asset_url('19.png'), style={'width': '500px', 'vertical-align': 'top'}),
 
                     html.H4("- How to compare two queries:"),
