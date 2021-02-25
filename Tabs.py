@@ -393,7 +393,7 @@ def render_content(tab):
                     
                     html.H4("- How to query an endpoint:"),
                     html.Div("First, write the query endpoint URL in the endpoint text area. Then type the query in the query text area and then press the SUBMIT button."),
-                    html.Img(src=app.get_asset_url('1.png'), style={'width': '250px', 'vertical-align': 'top'}),
+                    html.Img(src=app.get_asset_url('querybox0.png'), style={'width': '250px', 'vertical-align': 'top'}),
 
                     html.H4("- How to query an RDF file:"),
                     html.Div("Click on the upload area or simply drag the RDF file and drop it in the upload area and then write the query in query text area and finally press the SUBMIT button."),
