@@ -19,7 +19,7 @@ def plot_map_function(ResultListdataframe, df_lat, df_lon, index0, index1):
                         lat = df_lat,
                         lon = df_lon,
                         #text = df_lon.astype(str),
-                        text = ResultListdataframe.iloc[:, 0].astype(str)
+                        text = ResultListdataframe.iloc[:, 0].astype(str),
                         mode = 'markers',
                                                          
         ))  

@@ -10,7 +10,3 @@ import MapsCallbacks
 
 
 server = app.server
-
-
-
-app.run_server(debug=True)
