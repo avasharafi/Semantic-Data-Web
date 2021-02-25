@@ -123,3 +123,25 @@ FILTER (?countryOfTeam != ?countryOfBirth)
 FILTER (?stadiumcapacity > 30000)
 FILTER (?population > 10000000)
 } order by ?soccerplayer",http://dbpedia.org/sparql
+List all concepts,"PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX skosxl: <http://www.w3.org/2008/05/skos-xl#>
+SELECT ?concept
+WHERE {
+   ?concept a skos:Concept .
+}",https://agrovoc.uniroma2.it/sparql/
+"Search for all concepts that have an English preflabel but ""German missing"" while omitting those which are clearly marked as scientific names","PREFIX skos: <http://www.w3.org/2004/02/skos/core#> 
+PREFIX skosxl: <http://www.w3.org/2008/05/skos-xl#> 
+SELECT ?concept ?literal where { 
+ ?concept skosxl:prefLabel ?pl. 
+ MINUS {?concept <http://aims.fao.org/aos/agrontology#hasTaxonomicRank> ?t.} 
+ MINUS { 
+  ?pl <http://aims.fao.org/aos/agrontology#hasTermType> ?termtype . 
+  FILTER (regex(?termtype, ""Taxonomic terms for plants"") || regex(?termtype, ""Taxonomic terms for animals"")) 
+ } 
+ ?pl skosxl:literalForm ?literal. 
+ FILTER regex(str(?pl), ""xl_en"") 
+ FILTER NOT EXISTS { 
+  ?concept skosxl:prefLabel ?depl 
+  FILTER regex(str(?depl), ""xl_ro"") 
+ } 
+}",https://agrovoc.uniroma2.it/sparql/
