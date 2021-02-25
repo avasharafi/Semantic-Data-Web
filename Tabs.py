@@ -414,8 +414,8 @@ def render_content(tab):
                     html.Img(src=app.get_asset_url('chart00.png'), style={'width': '250px', 'vertical-align': 'top'}),
                     html.Img(src=app.get_asset_url('chart01.png'), style={'width': '500px', 'vertical-align': 'top'}),
                     html.Img(src=app.get_asset_url('chart02.png'), style={'width': '500px', 'vertical-align': 'top'}),
-                    html.Img(src=app.get_asset_url('17.png'), style={'width': '500px', 'vertical-align': 'top'}),
-                    html.Img(src=app.get_asset_url('18.png'), style={'width': '500px', 'vertical-align': 'top'}),
+                    html.Img(src=app.get_asset_url('chart03.png'), style={'width': '500px', 'vertical-align': 'top'}),
+                   # html.Img(src=app.get_asset_url('18.png'), style={'width': '500px', 'vertical-align': 'top'}),
 
                     html.H4("- How to see the query result as a map:"),
                     html.Div("After submitting the query, go to the maps tab. You can see the result there. Use the tools on the top right for zoom and other functions. You can also use the dropdowns to change the properties."),
