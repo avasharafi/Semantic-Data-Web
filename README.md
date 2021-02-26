@@ -8,7 +8,7 @@ https://dashboard-rdf.herokuapp.com/
 The whole project organised in:
 
 
-- data folder: contains some query samples
+- data folder: contains some query samples and sample files to upload.
 - Notebook folder: contains .ipynb version of code
 - asset: contains style sheet
 - src : contains python source codes of dashboard
