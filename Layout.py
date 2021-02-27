@@ -30,7 +30,6 @@ app.layout = html.Div([
             html.Div(
                 children=[
                 dcc.Tabs(id='tabs', value='Tutorial', children=[
-#                     dcc.Tab(label='Dashboard', value='Dashboard',style=tab_style, selected_style=tab_selected_style),
                     dcc.Tab(label='Tables', value='Tables',style=tab_style, selected_style=tab_selected_style),
                     dcc.Tab(label='Charts', value='Charts',style=tab_style, selected_style=tab_selected_style),
                     dcc.Tab(label='Maps', value='Maps',style=tab_style, selected_style=tab_selected_style),
@@ -130,7 +129,7 @@ app.layout = html.Div([
                 ]
             ),
             
-            #Alret div: Getting query
+            #Alert div: Getting query
             html.Div([
                 dbc.Alert(
                     ["There is no data for submitting. Check the endpoint and query textboxes."],
