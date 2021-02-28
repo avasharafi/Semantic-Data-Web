@@ -86,7 +86,7 @@ def Log_Parse_Data(Endpoint,Total_Time_Taken):
         
 #-----------------------------------------read query samples file----------------------------------------------------------------
 #make query examples table from csv file
-with open(os.path.join('../data/Book3.csv'), 'rt') as f:
+with open(os.path.join('./data/Book3.csv'), 'rt') as f:
     csv_reader = csv.reader(f)
     headers = []
     queries = []
