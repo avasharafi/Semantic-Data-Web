@@ -408,36 +408,52 @@ def render_content(tab):
                 className="tutorial",
                 children=[
                     html.H3('Tutorial'),
-                    
-                    html.H4("- How to query an endpoint:"),
+
+                    html.A("How to query an endpoint", href='#endpoint-link'),
+                    html.Br(),
+                    html.A("How to query an RDF file", href='#upload-link'),
+                    html.Br(),
+                    html.A("How to see the query result as a table", href='#table-link'),
+                    html.Br(),
+                    html.A("How to see the query result as a chart", href='#chart-link'),
+                    html.Br(),
+                    html.A("How to use query samples", href='#samples-link'),
+                    html.Br(),
+                    html.A("How to see the query result as a map", href='#map-link'),
+                    html.Br(),
+                    html.A("How to compare two queries", href='#compare-link'),
+                    html.Br(),
+                    html.A("How to use query samples", href='#samples-link'),
+
+                    html.H4("- How to query an endpoint:", id='endpoint-link'),
                     html.Img(src=app.get_asset_url('01.png'), style={'width': '700px', 'vertical-align': 'top'}),
 
-                    html.H4("- How to query an RDF file:"),
+                    html.H4("- How to query an RDF file:", id='upload-link'),
                     html.Img(src=app.get_asset_url('02.png'), style={'width': '700px', 'vertical-align': 'top'}),
                     html.Img(src=app.get_asset_url('03.png'), style={'width': '700px', 'vertical-align': 'top'}),
                     html.Img(src=app.get_asset_url('04.png'), style={'width': '700px', 'vertical-align': 'top'}),
                     html.Img(src=app.get_asset_url('05.png'), style={'width': '700px', 'vertical-align': 'top'}),
 
-                    html.H4("- How to see the query result as a table:"),
+                    html.H4("- How to see the query result as a table:", id='table-link'),
                     html.Img(src=app.get_asset_url('06.png'), style={'width': '700px', 'vertical-align': 'top'}),
                     html.Img(src=app.get_asset_url('07.png'), style={'width': '700px', 'vertical-align': 'top'}),
                     html.Img(src=app.get_asset_url('08.png'), style={'width': '700px', 'vertical-align': 'top'}),
 
-                    html.H4("- How to see the query result as a chart:"),
+                    html.H4("- How to see the query result as a chart:", id='chart-link'),
                     html.Img(src=app.get_asset_url('06.png'), style={'width': '700px', 'vertical-align': 'top'}),
                     html.Img(src=app.get_asset_url('09.png'), style={'width': '700px', 'vertical-align': 'top'}),
                     html.Img(src=app.get_asset_url('010.png'), style={'width': '700px', 'vertical-align': 'top'}),
                     html.Img(src=app.get_asset_url('011.png'), style={'width': '700px', 'vertical-align': 'top'}),
                     html.Img(src=app.get_asset_url('012.png'), style={'width': '700px', 'vertical-align': 'top'}),
 
-                    html.H4("- How to see the query result as a map:"),
+                    html.H4("- How to see the query result as a map:", id='map-link'),
                     html.Img(src=app.get_asset_url('06.png'), style={'width': '700px', 'vertical-align': 'top'}),
                     html.Img(src=app.get_asset_url('013.png'), style={'width': '700px', 'vertical-align': 'top'}),
 
-                    html.H4("- How to compare two queries:"),
+                    html.H4("- How to compare two queries:", id='compare-link'),
                     html.Img(src=app.get_asset_url('015.png'), style={'width': '700px', 'vertical-align': 'top'}),
 
-                    html.H4("- How to use query samples:"),
+                    html.H4("- How to use query samples:", id='samples-link'),
                     html.Img(src=app.get_asset_url('014.png'), style={'width': '700px', 'vertical-align': 'top'}),
                 ]),
         ])
