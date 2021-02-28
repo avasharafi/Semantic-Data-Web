@@ -54,7 +54,16 @@ def render_content(tab):
                         page_action="native",
                         page_current= 0,
                         page_size= 10,
-                        export_format="csv"
+                        export_format="csv",
+                        style_data_conditional=[
+                            {
+                                'if': {
+                                    'state': 'active'  # 'active' | 'selected'
+                                },
+                                'backgroundColor': 'rgb(211, 224, 234)',
+                                'border': '1px solid rgb(0, 116, 217)'
+                            }
+                        ],
                     )
                 ],
                 style= {
@@ -108,7 +117,16 @@ def render_content(tab):
                         page_action="native",
                         page_current= 0,
                         page_size= 10,
-                        export_format="csv"
+                        export_format="csv",
+                        style_data_conditional=[
+                            {
+                                'if': {
+                                    'state': 'active'  # 'active' | 'selected'
+                                },
+                                'backgroundColor': 'rgb(211, 224, 234)',
+                                'border': '1px solid rgb(0, 116, 217)'
+                            }
+                        ],
                     )
                 ],
                 style= {
