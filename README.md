@@ -13,7 +13,7 @@ The whole project organised in:
 - asset: contains style sheet.
 - src : contains python source codes of dashboard.
 
-
+![picture]
 ```diff
 - The dashboard's deployed on python-files branch.
 
