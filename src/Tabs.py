@@ -13,25 +13,7 @@ from HelperFunctions import start_table_df
 
 
 
-# selected tab callback 
-table_header = [
-    html.Thead(html.Tr([html.Th("File"), html.Th("Query")]))
-]
-query1=html.Div("select * where {<http://de.dbpedia.org/resource/Karlsruhe> ?p ?o .}")
-query2=html.Div([
-    html.Div("select (COUNT(?person)  as ?cnt)  ?name where {"),
-    html.Div("  ?person <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <"),
-    html.Div("http://swrc.ontoware.org/ontology#Person> . "),
-    html.Div("  ?person <http://swrc.ontoware.org/ontology#affiliation> ?aff ."),
-    html.Div("  #  ?aff a <http://swrc.ontoware.org/ontology#affiliation>."),
-    html.Div("  ?aff <http://swrc.ontoware.org/ontology#name> ?name ."),
-    html.Div("} group by ?name")
-])
-
-row1 = html.Tr([html.Td(html.A("Karl.n3",href="../data/Karl.n3",download="Karl.n3")), html.Td(query1)])
-row2 = html.Tr([html.Td(html.A("aifb_fixed_complete.nt",href="../data/aifb_fixed_complete.nt",download="aifb_fixed_complete.nt")), html.Td(query2)])
-
-table_body = [html.Tbody([row1, row2])]
+# selected tab callback
 
 #render page for selected tab
 @app.callback(
@@ -72,7 +54,16 @@ def render_content(tab):
                         page_action="native",
                         page_current= 0,
                         page_size= 10,
-                        export_format="csv"
+                        export_format="csv",
+                        style_data_conditional=[
+                            {
+                                'if': {
+                                    'state': 'active'
+                                },
+                                'backgroundColor': 'rgb(211, 224, 234)',
+                                'border': '1px solid rgb(0, 116, 217)'
+                            }
+                        ],
                     )
                 ],
                 style= {
@@ -126,7 +117,16 @@ def render_content(tab):
                         page_action="native",
                         page_current= 0,
                         page_size= 10,
-                        export_format="csv"
+                        export_format="csv",
+                        style_data_conditional=[
+                            {
+                                'if': {
+                                    'state': 'active'
+                                },
+                                'backgroundColor': 'rgb(211, 224, 234)',
+                                'border': '1px solid rgb(0, 116, 217)'
+                            }
+                        ],
                     )
                 ],
                 style= {
@@ -158,9 +158,8 @@ def render_content(tab):
                          
                     
                  ),    
-                    ]),
-            
-        ])
+                    ]), 
+        ]),
     elif tab == 'Charts':
         return html.Div([
                  html.Div(
@@ -170,10 +169,6 @@ def render_content(tab):
                         dcc.Graph(
                             id='graph',
                             figure={
-                               #"layout": {
-                                   # "height": 400,
-                                #    'overflow': 'scroll',
-                                #},
                             },
                         )],#dcc graph
                     style= {
@@ -210,9 +205,6 @@ def render_content(tab):
                             dcc.Graph(
                                 id='graph2',
                                 figure={
-                               # "layout": {
-                               #     "height": 400,
-                               # },
                                 },
                             ),
                          ],
@@ -249,9 +241,6 @@ def render_content(tab):
                         dcc.Graph(
                             id='map',
                             figure={
-                               # "layout": {
-                               #    "height": 340,
-                               # },
                             },
                         ),                
                      ],
@@ -317,9 +306,6 @@ def render_content(tab):
                         dcc.Graph(
                             id='map2',
                             figure={
-                              #  "layout": {
-                              #     "height": 340,
-                              #  },
                             },
                         ),
 
@@ -390,7 +376,7 @@ def render_content(tab):
                         style_data_conditional=[
                             {
                                 'if': {
-                                    'state': 'active'  # 'active' | 'selected'
+                                    'state': 'active'
                                 },
                                 'backgroundColor': 'rgb(211, 224, 234)',
                                 'border': '1px solid rgb(0, 116, 217)'
@@ -402,7 +388,6 @@ def render_content(tab):
                         column_selectable='single'
                     )
                 ]),
-                # dbc.Table(table_header + table_body, bordered=True,style={'fontSize':'small'}),
         ])
     elif tab == 'Tutorial':
         return html.Div([
@@ -410,46 +395,52 @@ def render_content(tab):
                 className="tutorial",
                 children=[
                     html.H3('Tutorial'),
-                    
-                    html.H4("- How to query an endpoint:"),
-                    html.Div("First, write the query endpoint URL in the endpoint text area. Then type the query in the query text area and then press the SUBMIT button."),
-                    html.Img(src=app.get_asset_url('1.png'), style={'width': '250px', 'vertical-align': 'top'}),
 
-                    html.H4("- How to query an RDF file:"),
-                    html.Div("Click on the upload area or simply drag the RDF file and drop it in the upload area and then write the query in query text area and finally press the SUBMIT button."),
-                    html.Img(src=app.get_asset_url('2.png'), style={'width': '250px', 'vertical-align': 'top'}),
-                    html.Img(src=app.get_asset_url('3.png'), style={'width': '250px', 'vertical-align': 'top'}),
-                    html.Img(src=app.get_asset_url('4.png'), style={'width': '250px', 'vertical-align': 'top'}),
+                    html.A("How to query an endpoint", href='#endpoint-link'),
+                    html.Br(),
+                    html.A("How to query an RDF file", href='#upload-link'),
+                    html.Br(),
+                    html.A("How to see the query result as a table", href='#table-link'),
+                    html.Br(),
+                    html.A("How to see the query result as a chart", href='#chart-link'),
+                    html.Br(),
+                    html.A("How to use query samples", href='#samples-link'),
+                    html.Br(),
+                    html.A("How to see the query result as a map", href='#map-link'),
+                    html.Br(),
+                    html.A("How to compare two queries", href='#compare-link'),
+                    html.Br(),
+                    html.A("How to use query samples", href='#samples-link'),
 
-                    html.H4("- How to see the query result as a table:"),
-                    html.Div("After submitting the query, go to the tables tab. You can see the query result there. you can also use the dropdowns to change the properties. Also you can export the table as a csv file by clicking on the export button."),
-                    html.Img(src=app.get_asset_url('5.png'), style={'width': '250px', 'vertical-align': 'top'}),
-                    html.Img(src=app.get_asset_url('6.png'), style={'width': '250px', 'vertical-align': 'top'}),
-                    html.Img(src=app.get_asset_url('7.png'), style={'width': '250px', 'vertical-align': 'top'}),
-                    html.Img(src=app.get_asset_url('5.png'), style={'width': '250px', 'vertical-align': 'top'}),
+                    html.H4("- How to query an endpoint:", id='endpoint-link'),
+                    html.Img(src=app.get_asset_url('01.png'), style={'width': '700px', 'vertical-align': 'top'}),
 
-                    html.H4("- How to see the query result as a chart:"),
-                    html.Div("After submitting the query, go to the charts tab to see the query result as a chart. Use the dropdowns to change the properties. You can also use the tools to zoom or export the chart as an image."),
-                    html.Img(src=app.get_asset_url('5.png'), style={'width': '250px', 'vertical-align': 'top'}),
-                    html.Img(src=app.get_asset_url('10.png'), style={'width': '250px', 'vertical-align': 'top'}),
-                    html.Img(src=app.get_asset_url('15.png'), style={'width': '250px', 'vertical-align': 'top'}),
-                    html.Img(src=app.get_asset_url('16.png'), style={'width': '250px', 'vertical-align': 'top'}),
-                    html.Img(src=app.get_asset_url('17.png'), style={'width': '250px', 'vertical-align': 'top'}),
-                    html.Img(src=app.get_asset_url('18.png'), style={'width': '250px', 'vertical-align': 'top'}),
+                    html.H4("- How to query an RDF file:", id='upload-link'),
+                    html.Img(src=app.get_asset_url('02.png'), style={'width': '700px', 'vertical-align': 'top'}),
+                    html.Img(src=app.get_asset_url('03.png'), style={'width': '700px', 'vertical-align': 'top'}),
+                    html.Img(src=app.get_asset_url('04.png'), style={'width': '700px', 'vertical-align': 'top'}),
+                    html.Img(src=app.get_asset_url('05.png'), style={'width': '700px', 'vertical-align': 'top'}),
 
-                    html.H4("- How to see the query result as a map:"),
-                    html.Div("After submitting the query, go to the maps tab. You can see the result there. Use the tools on the top right for zoom and other functions. You can also use the dropdowns to change the properties."),
-                    html.Img(src=app.get_asset_url('5.png'), style={'width': '250px', 'vertical-align': 'top'}),
-                    html.Img(src=app.get_asset_url('11.png'), style={'width': '250px', 'vertical-align': 'top'}),
+                    html.H4("- How to see the query result as a table:", id='table-link'),
+                    html.Img(src=app.get_asset_url('06.png'), style={'width': '700px', 'vertical-align': 'top'}),
+                    html.Img(src=app.get_asset_url('07.png'), style={'width': '700px', 'vertical-align': 'top'}),
+                    html.Img(src=app.get_asset_url('08.png'), style={'width': '700px', 'vertical-align': 'top'}),
 
-                    html.H4("- How to compare two queries:"),
-                    html.Div("First, submit the first query either by querying an endpoint or uploading the RDF file. Then, open the compare text area by clicking on toggle compare box button. Then add the second query in one of the two possible ways described and press COMPARE button."),
-                    html.Img(src=app.get_asset_url('5.png'), style={'width': '250px', 'vertical-align': 'top'}),
+                    html.H4("- How to see the query result as a chart:", id='chart-link'),
+                    html.Img(src=app.get_asset_url('06.png'), style={'width': '700px', 'vertical-align': 'top'}),
+                    html.Img(src=app.get_asset_url('09.png'), style={'width': '700px', 'vertical-align': 'top'}),
+                    html.Img(src=app.get_asset_url('010.png'), style={'width': '700px', 'vertical-align': 'top'}),
+                    html.Img(src=app.get_asset_url('011.png'), style={'width': '700px', 'vertical-align': 'top'}),
+                    html.Img(src=app.get_asset_url('012.png'), style={'width': '700px', 'vertical-align': 'top'}),
 
-                    html.H4("- How to use query samples:"),
-                    html.Div("In the query samples tab, you will find several samples. All you have to do is choosing one of them. The query will appear in the query text area and you can also see the endpoint in the endpoint text area. After clicking on SUBMIT button, you can see the query result in the table, chart or map tab."),
-                    html.Img(src=app.get_asset_url('13.png'), style={'width': '250px', 'vertical-align': 'top'}),
-                    html.Img(src=app.get_asset_url('12.png'), style={'width': '250px', 'vertical-align': 'top'}),
-                    html.Img(src=app.get_asset_url('14.png'), style={'width': '250px', 'vertical-align': 'top'}),
+                    html.H4("- How to see the query result as a map:", id='map-link'),
+                    html.Img(src=app.get_asset_url('06.png'), style={'width': '700px', 'vertical-align': 'top'}),
+                    html.Img(src=app.get_asset_url('013.png'), style={'width': '700px', 'vertical-align': 'top'}),
+
+                    html.H4("- How to compare two queries:", id='compare-link'),
+                    html.Img(src=app.get_asset_url('015.png'), style={'width': '700px', 'vertical-align': 'top'}),
+
+                    html.H4("- How to use query samples:", id='samples-link'),
+                    html.Img(src=app.get_asset_url('014.png'), style={'width': '700px', 'vertical-align': 'top'}),
                 ]),
         ])
