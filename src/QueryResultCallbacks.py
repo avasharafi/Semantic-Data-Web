@@ -38,7 +38,7 @@ def sql(value, endpoint):
 
         try: 
             processed_results = sparql.query().convert()
-
+        # to catch possible errors
         except (EndPointInternalError, EndPointNotFound):
             return  None
 
@@ -54,7 +54,7 @@ def sql(value, endpoint):
         except urllib.error.HTTPError:
             return None
 
-
+        # get the columns and the values for each columns 
         if len(processed_results["results"]["bindings"]) > 0:
             cols = processed_results['head']['vars']
 
@@ -64,14 +64,14 @@ def sql(value, endpoint):
                 for c in cols: 
                     item.append(row.get(c, {}).get('value'))
                 out.append(item)
-
+            # save the results as data frame
             ResultListdataframe = pd.DataFrame(out, columns=cols)
 
-            #to clean the data
+            #to parse long string to remove extra url
             for col in ResultListdataframe.columns:
                 ResultListdataframe[col] = ResultListdataframe[col].str.split(pat="/").str[-1]
 
-
+            # remove strings in coordinates
             if set(['lon','lat']).issubset(ResultListdataframe.columns): 
                 if 'coord' in ResultListdataframe.columns:
                     ResultListdataframe['coord'] = ResultListdataframe['coord'].str.split("\(", expand=True)[1]
@@ -106,13 +106,15 @@ def get_data_function(value, endpoint,endpointType):
                 qres = g.query(value)
             except ParseException:
                 return True,False,None
+
             ResultListdataframe = pd.DataFrame (qres.bindings)
             end2 = time.perf_counter()
             Log_Query_Data(endpoint,value, len(ResultListdataframe.index),ResultListdataframe.shape[1],round(end2 - start2,3))            
             return False, False, ResultListdataframe.to_json(date_format='iso', orient='split')
         
-        
+        # online querying  
         elif endpointType == '2':
+
             ResultListdataframe = sql(value, endpoint) 
             
             if ResultListdataframe is None:

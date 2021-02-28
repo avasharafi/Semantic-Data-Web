@@ -232,7 +232,7 @@ app.layout = html.Div([
     ]),      
 
  
-    #hidden div 
+    #hidden div to store data
     dcc.Loading(id="loading", 
                 children=[html.Div( 
                     id='intermediate-value', 
@@ -264,7 +264,7 @@ app.layout = html.Div([
                 
             ),
 
-     #hidden div 
+     #hidden div to store data
     dcc.Loading(id="loading2", 
                 children=[html.Div( 
                     id='intermediate-value2', 
