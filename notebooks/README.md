@@ -13,16 +13,10 @@ To run the dashboard locally, you have to have the python environment installed.
   - pip install -r requirements.txt
 
 
-- To run with voila, 
-  - Install voila:
-If you use conda, you can install it with:  
-  - conda install -c conda-forge voila  
-If you use pip, you can install it with  
-  - pip install voila
-
-Then open cmd or terminal, change the path to the local repository which you've saved the Notebook folder, Then type the command below into a terminal to run the app locally.
-
-voila main.ipynb	
+- To run with voila,
+  - cd to the directory where notebooks are located.
+  - type and run the command below in a terminal
+      -   voila main.ipynb	
 
 
 more information about voila:
